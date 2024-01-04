@@ -73,6 +73,23 @@ export default function Page() {
           Upload
         </button>
       </form>
+      <h1>Submit Image to Model</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          id="file"
+          type="file"
+          onChange={(e) => {
+            const files = e.target.files
+            if (files) {
+              setFile(files[0])
+            }
+          }}
+          accept="image/png, image/jpeg"
+        />
+        <button type="submit" disabled={uploading}>
+          Upload
+        </button>
+      </form>
     </main>
   )
 }
